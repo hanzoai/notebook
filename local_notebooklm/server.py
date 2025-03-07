@@ -1,5 +1,5 @@
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException, BackgroundTasks
-from fastapi.responses import JSONResponse, FileResponse
+from fastapi.responses import FileResponse
 from enum import Enum
 from typing import Optional
 import tempfile
@@ -9,7 +9,7 @@ from pydantic import BaseModel
 import uuid
 
 # Import the processor
-from processor import podcast_processor
+from .processor import podcast_processor
 
 # Create FastAPI app
 app = FastAPI(

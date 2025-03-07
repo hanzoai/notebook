@@ -1,10 +1,10 @@
 from pathlib import Path
 
-from steps.step1 import step1
-from steps.step2 import step2
-from steps.step3 import step3
-from steps.step4 import step4
-from steps.helpers import set_provider
+from .steps.helpers import set_provider
+from .steps.step1 import step1
+from .steps.step2 import step2
+from .steps.step3 import step3
+from .steps.step4 import step4
 
 def podcast_processor(
     pdf_path,
@@ -12,7 +12,7 @@ def podcast_processor(
     format_type="summary",
     length="medium",
     style="normal",
-    preference=None,
+    preference="nothing",
     output_dir="./output",
     skip_to=None
 ):
@@ -22,7 +22,7 @@ def podcast_processor(
         with open(config_path, 'r') as f:
             config = json.load(f)
     else:
-        from config import base_config
+        from local_notebooklm.config import base_config
         config = base_config
     
     # Create output directories
@@ -77,7 +77,8 @@ def podcast_processor(
                 output_dir=str(output_dirs["step2"]),
                 format_type=format_type,
                 length=length,
-                style=style
+                style=style,
+                preference_text=preference
             )
         else:
             # If skipping, find the most recent output file from step2

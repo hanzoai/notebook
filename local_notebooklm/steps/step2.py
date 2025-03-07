@@ -44,13 +44,14 @@ def generate_transcript(
     length,
     style,
     format_type,
+    preference_text,
     max_tokens,
     temperature
 ) -> str:
     try:
         wait_for_next_step()
         conversation = [
-            {"role": "system", "content": map_step2_system_prompt(length=length, style=style, format_type=format_type)},
+            {"role": "system", "content": map_step2_system_prompt(length=length, style=style, format_type=format_type, preference_text=preference_text)},
             {"role": "user", "content": input_text},
         ]
         return generate(
@@ -71,7 +72,8 @@ def step2(
     output_dir: str = None,
     format_type: FormatType = "podcast",
     length: LengthType = "medium",
-    style: StyleType = "normal"
+    style: StyleType = "normal",
+    preference_text: str = "nothing"
 ) -> str:
     try:
         output_dir = Path(output_dir)
@@ -88,6 +90,7 @@ def step2(
             format_type=format_type,
             length=length,
             style=style,
+            preference_text=preference_text,
             max_tokens=config["Step2"]["max_tokens"],
             temperature=config["Step2"]["temperature"]
         )

@@ -1,6 +1,6 @@
 import argparse, sys
 
-from processor import podcast_processor
+from .processor import podcast_processor
 
 def main():
     parser = argparse.ArgumentParser(description="Generate a podcast from a PDF document")
@@ -30,6 +30,11 @@ def main():
         output_dir=args.output_dir,
         skip_to=args.skip_to
     )
+
+    if success:
+        print(f"✅ Podcast generated at: {result}")
+    else:
+        print(f"❌ Failed: {result}")
     
     return 0 if success else 1
 

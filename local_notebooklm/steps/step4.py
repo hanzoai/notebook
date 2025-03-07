@@ -1,5 +1,5 @@
 from typing import List, Tuple, Dict, Any, Optional
-from helpers import wait_for_next_step
+from .helpers import wait_for_next_step
 import logging, pickle, ast, re, time
 from pathlib import Path
 import soundfile as sf
