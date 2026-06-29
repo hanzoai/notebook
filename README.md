@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="notebook" width="880"></p>
+
 # Local-NotebookLM
 
 ![logo](logo.jpeg)
