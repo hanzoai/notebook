@@ -2,6 +2,8 @@
 
 # Local-NotebookLM
 
+[![Open in Hanzo](https://hanzo.app/badges/open-in-hanzo.svg)](https://hanzo.app/dev/open?repo=github.com/hanzoai/notebook&ref=main&action=open) [![Edit with Hanzo](https://hanzo.app/badges/edit-with-hanzo.svg)](https://hanzo.app/dev/open?repo=github.com/hanzoai/notebook&ref=main&action=edit) [![Deploy with Hanzo](https://hanzo.app/badges/deploy-with-hanzo.svg)](https://hanzo.app/dev/open?repo=github.com/hanzoai/notebook&ref=main&action=deploy)
+
 ![logo](logo.jpeg)
 
 NEW! A stand-alone app has been released [link](https://github.com/Goekdeniz-Guelmez/Local-Notebook-LM-App).
